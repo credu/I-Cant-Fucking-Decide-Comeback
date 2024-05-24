@@ -7,47 +7,76 @@
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-        <div class="container mx-auto">
-            <section class="p-[50px_20px] relative">
-                <h2 class="uppercase text-center text-[rgb(41,41,41)] text-4xl tracking-widest">
-                    I Can't Fucking Decide<br/>BETWEEN
-                </h2>
-                <a
-                    href="#"
-                    class="absolute right-0 top-[15px] text-[rgb(71,180,117)] font-semibold text-xs"
-                    >Follow</a
+        <div class="container flex items-center justify-center max-w-[900px] mx-auto p-[36px_20px] relative *:w-full">
+            <section id="options-view">
+                <header class="py-[50px] relative">
+                    <h1 class="text-[rgb(41,41,41)] text-4xl text-center tracking-widest uppercase">
+                        I Can't Fucking Decide<br/>Between
+                    </h1>
+                    <a
+                        href="#"
+                        class="absolute right-0 top-[15px] text-[rgb(71,180,117)] font-semibold text-xs"
+                        >Follow</a
+                    >
+                </header>
+                <form
+                    action="#"
+                    id="decide-form"
+                    class="grid grid-cols-1 sm:grid-cols-3 gap-[40px] *:justify-self-center"
                 >
-            </section>
-
-            <section class="p-[36px_20px]">
-                <form action="#">
-                    <div class="flex flex-row justify-evenly">
+                    <div>
                         <textarea
-                            name=""
-                            id=""
-                            placeholder="THIS"
+                            name="option1"
                             class="p-4 h-[200px] w-[200px] resize-none tracking-[1px] bg-[#f5f5f5] py-[15px] uppercase font-bold"
+                            placeholder="THIS"
+                            required
                         ></textarea>
+                    </div>
+                    <div>
                         <textarea
-                            name=""
-                            id=""
+                            name="option2"
                             class="p-4 h-[200px] w-[200px] resize-none tracking-[1px] bg-[#f5f5f5] py-[15px] uppercase font-bold"
                             placeholder="AND THAT"
+                            required
                         ></textarea>
-                        <img
-                            class="cursor-pointer block"
-                            src="assets/img/plus.png"
-                            alt="plus"
-                        />
                     </div>
+                    <img
+                        class="cursor-pointer block"
+                        src="assets/img/plus.png"
+                        alt="plus"
+                    />
                 </form>
-            </section>
-            <section class="flex justify-center">
+
                 <button
-                    class="bg-[#FF4040] font-bold h-[50px] w-[345px] text-white text-center text-xs uppercase tracking-[1px] mt-5"
+                    type="submit"
+                    form="decide-form"
+                    class="bg-[#FF4040] font-bold h-[50px] w-[345px] text-white text-center text-xs uppercase tracking-[1px] mt-[40px] mx-auto block"
                 >
-                    decide for me
+                    Decide for me
                 </button>
+            </section>
+
+            <section id="choice-view" class="absolute flex flex-col items-center invisible">
+                <h2 class="uppercase text-[20px] font-semibold tracking-[10px] text-center leading-none">This is the fucking decision</h2>
+
+                <p id="choice-text" class="text-[rgb(102,102,102)] my-[40px] text-2xl leading-none">"cat gift"</p>
+
+                <div class="flex">
+                    <button
+                        type="submit"
+                        form="decide-form"
+                        class="block bg-[#FF4040] font-bold text-[11px] text-white py-[15px] min-w-[200px] uppercase tracking-[1px] mr-[20px] leading-none"
+                    >
+                        Decide for me again
+                    </button>
+                    <button
+                        type="reset"
+                        form="decide-form"
+                        class="block bg-[#FF4040] font-bold text-[11px] text-white py-[15px] min-w-[200px] uppercase tracking-[1px] ml-[20px] leading-none"
+                    >
+                        Start over
+                    </button>
+                </div>
             </section>
         </div>
     </body>
